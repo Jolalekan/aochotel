@@ -4,7 +4,7 @@ import Container from './container'
 const Footer = () => {
   return (
     <Container>
-    <div className='flex justify-between my-10'>
+    <div className='flex justify-between py-10'>
         {/* RIGHT */}
         <div className='flex items-center '>
             <img src="bathtub.png" alt="" />

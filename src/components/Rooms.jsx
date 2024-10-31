@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "./container";
 import gsap from "gsap";
 
 
 const Rooms = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const slides = [
     {
       id: 1,
@@ -66,9 +68,16 @@ const Rooms = () => {
       spanImage4: "wifi.png",
       spanImage4Text: "Free Wifi",
       url:"/"
-      
     },
   ]
+
+  const handleNextSlide =()=>{
+    setCurrentSlide((prevState)=>(prevState + 1) % slides.length)
+  }
+
+  const handlePrevSlide=()=>{
+    setCurrentSlide((prevState)=> (prevState - 1 + slides.length) % slides.length)
+  }
 
     useEffect(() => {
       const timeline = gsap.timeline();
@@ -84,9 +93,9 @@ const Rooms = () => {
     }, [slides]);
 
     return (
-    <Container>
-      <div className="my-7 h-screen">
-        <div className=" my-32  flex  justify-center">
+    <Container > 
+      <main className="flex flex-col gap-10 py-10">
+        <div className=" flex justify-center">
           <div className=" flex-col flex items-center max-w-3xl justify-center ">
             <h2 className="about-heading   text-center text-3xl font-medium mb-12">Our Rooms</h2>
             {/* <span>TODO LOGO</span> */}
@@ -103,7 +112,7 @@ const Rooms = () => {
   
         <div className="flex gap-6 transition-all ease-in-out duration-1000"> 
                   {slides.map((slide, index)=>(                  
-            <div id={`slide-${index}`} key={slide.id} className="cursor-pointer flex flex-col opacity-0">
+            <div id={`slide-${index}`} key={slide.id} className="cursor-pointer flex flex-col opacity-0"style={{transform: `translateX(-${currentSlide })`}}>
                 <div className="relative mb-3">
                 <img src={slide.img1}  className="w-full h-96" alt="" />
                 <figcaption className="absolute bottom-4 left-4 text-3xl font-medium text-white">
@@ -144,9 +153,25 @@ const Rooms = () => {
         ))}
         </div>
 
-        <div></div>
+        </main>
 
-      </div>
+        {/* <div className="w-auto bg-red-500 left-1/2 transform translate-x-1/2 flex gap-4">
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className={`w-3 h-3 rounded-full ring-1 flex items-center justify-ce
+                nter cursor-pointer ${
+                currentSlide === index ? "scale-150 bg-gray-200" : "bg-gray-500"
+              }`}
+              onClick={() => setCurrentSlide(index)}
+            >
+              {currentSlide === index && (
+                <div className="w-[6px] h-[6px] bg-white rounded-full"></div>
+              )}
+            </div>
+          ))}
+        </div> */}
+ 
     </Container>
   );
 };

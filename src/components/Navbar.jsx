@@ -19,8 +19,8 @@ const Navbar = () => {
 }, [scrolled]);
 
   return (
-    <Container>
-      <header ref={navRef} className=" flex justify-between h-[120px] items-center ">
+    
+      <header ref={navRef} className="h-20 flex justify-between items-center ">
          <h2 className="text-2xl font-medium"> AOC Hotel and Suite</h2>
         
         <nav>
@@ -33,7 +33,7 @@ const Navbar = () => {
           </ul>
         </nav>
       </header>
-    </Container>
+
   );
 };
 

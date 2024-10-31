@@ -5,7 +5,7 @@ const BathTub = () => {
   return (
     <Container>
         
-     <section className='flex flex-col gap-6 my-60'>
+     <section className='flex flex-col gap-6 py-20'>
       <div className='grid grid-cols-4'>
       <div className='flex flex-col gap-6 items-center'>
         <span><img src="bathtub.png" alt="" /></span>

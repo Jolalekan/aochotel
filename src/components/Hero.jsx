@@ -40,7 +40,7 @@ const Hero = () => {
 
   }, [])
   return (
-    <div className='h-[680px] '>
+    <div className='h-[calc(100vh-80px)] overflow-hidden'>
 
     <div className='flex mx-6  h-full '>
       <div className='flex-1 flex'>

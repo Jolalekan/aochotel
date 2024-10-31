@@ -3,8 +3,8 @@ import Container from './container'
 
 const About = () => {
   return (
-    <Container>
-        <section className='flex flex-col gap-10 h-screen my-40 '>
+    <Container >
+        <section className='py-10 flex flex-col gap-10 '>
 
 <div className='flex justify-center'>
 
@@ -22,12 +22,12 @@ const About = () => {
      </article>
 
 </div>
-     <div className=''> 
-        <div className='w-full relative h-[500px] '>
+
+        <div className='h-[500px] w-full relative  '>
             <img src="hotel3.avif" alt="" className='h-full  object-cover' />
-            <div className='p-4 bg-gray-100  absolute right-0 top-12 bottom-10 border rounded-md h-[600px]'><img src="hotel4.avif" alt="" className='h-full w-full object-cover' /></div>
+            <div className='h-[500px] p-4 bg-gray-100  absolute right-0 top-12 bottom-10 border rounded-md '><img src="hotel4.avif" alt="" className='h-full w-full object-cover' /></div>
         </div>
-     </div>
+
         </section>
     </Container>
   )
