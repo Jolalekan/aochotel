@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from './container'
+import Container from './Container'
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
     <div className='flex justify-between py-10'>
         {/* RIGHT */}
         <div className='flex items-center '>
-            <img src="bathtub.png" alt="" />
+            <img src="assets/bathtub.png" alt="" />
         </div>
 
         <div>
@@ -37,11 +37,11 @@ const Footer = () => {
             <div className='flex flex-col gap-6'>
 
                 <div className='flex  gap-3'>
-                    <span><img src="phone.png" className='w-6 h-6' alt="" /></span>
+                    <span><img src="assets/phone.png" className='w-6 h-6' alt="" /></span>
                    <h2 className='font-medium'> +23480-343-4343 </h2>
                 </div>
                 <div className='flex gap-3'>
-                <span><img src="mail.png"  className='w-6 h-6' alt="" /></span>
+                <span><img src="assets/mail.png"  className='w-6 h-6' alt="" /></span>
                 <h2>info@aoc@gmail.com</h2>
                 </div>
                 <div>

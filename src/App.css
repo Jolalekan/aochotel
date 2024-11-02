@@ -11,6 +11,11 @@ body{
   color: white;
 }
 
+.gradient-bg
+{ 
+  background: linear-gradient(90deg, #0000ff 0%, #6868ff 0%, #ee82ee 100%);
+}
+
 .gradient__bg {
   background:-moz-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
 

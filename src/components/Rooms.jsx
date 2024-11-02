@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Container from "./container";
+import Container from "./Container";
 import gsap from "gsap";
-
+import {useNavigate} from "react-router-dom";
 
 const Rooms = () => {
+  const navigate = useNavigate()
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
@@ -11,63 +12,59 @@ const Rooms = () => {
       id: 1,
       title: "Executive Room",
       desc: "Executive Royale has the following facilities",
-      img1: "hotel1.avif",
-      spanImage1: "bathtub.png",
+      img1: "assets/hotel1.avif",
+      spanImage1: "assets/bathtub.png",
       spanImage1Text: "King Size Bed",
-      spanImage2: "car-wash.png",
+      spanImage2: "assets/car-wash.png",
       spanImage2Text: "Car Wash",
-      spanImage3: "salad-bowl.png",
+      spanImage3: "assets/salad-bowl.png",
       spanImage3Text: "Breakfast",
-      spanImage4: "wifi.png",
+      spanImage4: "assets/wifi.png",
       spanImage4Text: "Free Wifi",
-      url:"/"
       
     },
     {
       id: 2,
       title: "Presidential Suit",
       desc: "Presidential Siut has the following facilities",
-      img1: "hotel3.avif",
-      spanImage1: "bathtub.png",
+      img1: "assets/hotel3.avif",
+      spanImage1: "assets/bathtub.png",
       spanImage1Text: "King Size Bed",
-      spanImage2: "car-wash.png",
+      spanImage2: "assets/car-wash.png",
       spanImage2Text: "Car Wash",
-      spanImage3: "salad-bowl.png",
+      spanImage3: "assets/salad-bowl.png",
       spanImage3Text: "Breakfast",
-      spanImage4: "wifi.png",
+      spanImage4: "assets/wifi.png",
       spanImage4Text: "Free Wifi",
-      url:"/"
       
     },
     {
       id: 3,
       title: "Executive Room",
       desc: "Executive Royale has the following facilities",
-      img1: "hotel3.avif",
-      spanImage1: "bathtub.png",
+      img1: "assets/hotel3.avif",
+      spanImage1: "assets/bathtub.png",
       spanImage1Text: "King Size Bed",
-      spanImage2: "car-wash.png",
+      spanImage2: "assets/car-wash.png",
       spanImage2Text: "Car Wash",
-      spanImage3: "salad-bowl.png",
+      spanImage3: "assets/salad-bowl.png",
       spanImage3Text: "Breakfast",
-      spanImage4: "wifi.png",
+      spanImage4: "assets/wifi.png",
       spanImage4Text: "Free Wifi",
-      url:"/"
     },
     {
       id: 4,
       title: "Executive Room",
       desc: "Executive Royale has the following facilities",
-      img1: "hotel4.avif",
-      spanImage1: "bathtub.png",
+      img1: "assets/hotel4.avif",
+      spanImage1: "assets/bathtub.png",
       spanImage1Text: "King Size Bed",
-      spanImage2: "car-wash.png",
+      spanImage2: "assets/car-wash.png",
       spanImage2Text: "Car Wash",
-      spanImage3: "salad-bowl.png",
+      spanImage3: "assets/salad-bowl.png",
       spanImage3Text: "Breakfast",
-      spanImage4: "wifi.png",
+      spanImage4: "assets/wifi.png",
       spanImage4Text: "Free Wifi",
-      url:"/"
     },
   ]
 
@@ -77,6 +74,10 @@ const Rooms = () => {
 
   const handlePrevSlide=()=>{
     setCurrentSlide((prevState)=> (prevState - 1 + slides.length) % slides.length)
+  }
+
+  const navigateToRoom =(roomId)=>{
+    navigate(`/rooms/${roomId}`)
   }
 
     useEffect(() => {
@@ -112,7 +113,12 @@ const Rooms = () => {
   
         <div className="flex gap-6 transition-all ease-in-out duration-1000"> 
                   {slides.map((slide, index)=>(                  
-            <div id={`slide-${index}`} key={slide.id} className="cursor-pointer flex flex-col opacity-0"style={{transform: `translateX(-${currentSlide })`}}>
+            <div id={`slide-${index}`} 
+                key={slide.id} 
+                onClick={()=>navigateToRoom(slide.id)}
+                className="cursor-pointer flex flex-col opacity-0"style={{transform: `translateX(-${currentSlide })`}}
+                
+                >
                 <div className="relative mb-3">
                 <img src={slide.img1}  className="w-full h-96" alt="" />
                 <figcaption className="absolute bottom-4 left-4 text-3xl font-medium text-white">
