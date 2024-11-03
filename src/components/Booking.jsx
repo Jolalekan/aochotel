@@ -31,7 +31,7 @@ const Booking = () => {
               className="text-[24px] p-2 pl-10 w-full  bg-transparent cursor-pointer focus:outline-none"
             />
             <img
-              src="assets/calendar.png"
+              src="/assets/calendar.png"
               alt="calendar icon"
               width={20}
               height={20}
@@ -52,7 +52,7 @@ const Booking = () => {
               className="text-[24px] p-2 pl-10 w-full  bg-transparent cursor-pointer focus:outline-none"
             />
             <img
-              src="assets/calendar.png"
+              src="/assets/calendar.png"
               alt="calendar icon"
               width={20}
               height={20}
