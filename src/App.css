@@ -79,6 +79,13 @@ nav ul li:hover:after {
   opacity: 1;
 }
 
+.nav-bg{
+  background-color: #042c54
+}
+
+.color-footer{
+  background-color: #031b34;}
+
 .about-heading {
   position: relative;
   font-size: 40px;

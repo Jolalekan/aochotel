@@ -54,7 +54,7 @@ const Hero = () => {
       </div>
         </div>
       <div className='md:h-full h-1/2 md:w-1/2'ref={heroRef}>
-        <img src="assets/hotel.avif" className='object-cover w-full h-full' alt="" />
+        <img src="/assets/hotel.avif" className='object-cover w-full h-full' alt="" />
       </div>
       </div>
       </div>

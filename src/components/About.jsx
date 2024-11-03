@@ -24,8 +24,8 @@ const About = () => {
 </div>
 
         <div className='h-[500px] w-full relative  '>
-            <img src="assets/hotel3.avif" alt="" className='h-full  object-cover' />
-            <div className='h-[500px] p-4 bg-gray-100  absolute right-0 top-12 bottom-10 border rounded-md '><img src="assets/hotel4.avif" alt="" className='h-full w-full object-cover' /></div>
+            <img src="/assets/hotel3.avif" alt="" className='h-full  object-cover' />
+            <div className='h-[500px] p-4 bg-gray-100  absolute right-0 top-12 bottom-10 border rounded-md '><img src="/assets/hotel4.avif" alt="" className='h-full w-full object-cover' /></div>
         </div>
 
         </section>

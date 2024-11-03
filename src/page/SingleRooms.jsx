@@ -4,6 +4,7 @@ import Container from "../components/Container";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import Rooms from "../components/Rooms";
 
 const SingleRooms = () => {
   const { roomId } = useParams();
@@ -38,6 +39,21 @@ const SingleRooms = () => {
       src: "/assets/hotel4.avif",
     },
   ];
+
+
+  const feature=[
+    {
+      id: "1",
+      spanImage1: "assets/bathtub.png",
+      spanImage1Text: "King Size Bed",
+      spanImage2: "assets/car-wash.png",
+      spanImage2Text: "Car Wash",
+      spanImage3: "assets/salad-bowl.png",
+      spanImage3Text: "Breakfast",
+      spanImage4: "assets/wifi.png",
+      spanImage4Text: "Free Wifi",
+    }
+  ]
 
   return (
     <Container>
@@ -236,18 +252,64 @@ const SingleRooms = () => {
         </div>
 
 
+        <div className="border-t border-gray-400 border-b">
 
         <div className="flex bg-gray-800 p-6">
           <div className="w-1/3 border-r border-gray-400">
-          <h2 className="font-medium">Description</h2>
+          <h2 className=" text-[26px] font-medium uppercase">Description</h2>
           </div>
-              <div className="w-2/3">
-                <div className="flex flex-col gap-6">
-                  <h3>EXECUTIVE ROOM</h3>
-                  <p>FEATURES</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime repellat perspiciatis, saepe ipsa eaque velit quibusdam, quo mollitia suscipit laborum, et explicabo? Eaque veritatis esse placeat blanditiis ab quibusdam rem.</p>
+              <div className="w-2/3 px-3">
+                <div className="flex flex-col gap-2">
+                  <h3 className="font-medium text-[20px]">EXECUTIVE ROOM</h3>
+                  <p className="text-gray-200">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime repellat perspiciatis, saepe ipsa eaque velit quibusdam, quo mollitia suscipit laborum, et explicabo? Eaque veritatis esse placeat blanditiis ab quibusdam rem.</p>
                 </div>
+                  <h3 className="font-medium py-3">FEATURES</h3>
+                  <div className="flex flex-col gap-2 border border-gray-300 rounded-md">
+
+                  <div className="grid p-2 gap-2 grid-cols-4 ">
+                  <div className="flex gap-4 border p-4">
+                    <div><img src="/assets/wifi.png" width={20} height={20} alt="" /></div>
+                    <h2 className="text-[16px]">Wifi</h2>
+                  </div>   
+                  <div className="flex gap-4 border p-4">
+                    <div><img src="/assets/bathtub.png" width={20} height={20} alt="" /></div>
+                    <h2 className="text-[16px]">Bathtub</h2>
+                  </div>   
+                  <div className="flex gap-4 border p-4">
+                    <div><img src="/assets/salad-bowl.png" width={20} height={20} alt="" /></div>
+                    <h2 className="text-[16px]">Breakfast</h2>
+                  </div>   
+                  <div className="flex gap-4 border p-4">
+                    <div><img src="/assets/car-wash.png" width={20} height={20} alt="" /></div>
+                    <h2 className="text-[16px]">Car wash</h2>
+                  </div>   
+                  </div>
+                  <div className="grid p-2 gap-2 grid-cols-4 ">
+                  <div className="flex gap-4 border p-4">
+                    <div><img src="/assets/wifi.png" width={20} height={20} alt="" /></div>
+                    <h2 className="text-[16px]">Wifi</h2>
+                  </div>   
+                  <div className="flex gap-4 border p-4">
+                    <div><img src="/assets/bathtub.png" width={20} height={20} alt="" /></div>
+                    <h2 className="text-[16px]">Bathtub</h2>
+                  </div>   
+                  <div className="flex gap-4 border p-4">
+                    <div><img src="/assets/salad-bowl.png" width={20} height={20} alt="" /></div>
+                    <h2 className="text-[16px]">Breakfast</h2>
+                  </div>   
+                  <div className="flex gap-4 border p-4">
+                    <div><img src="/assets/car-wash.png" width={20} height={20} alt="" /></div>
+                    <h2 className="text-[16px]">Car wash</h2>
+                  </div>   
+                  </div>
               </div>
+                  </div>
+        </div>
+        </div>
+
+        <div>
+          <h2>CHECK OUR OTHER ROOMS</h2>
+          
         </div>
       </div>
     </Container>
