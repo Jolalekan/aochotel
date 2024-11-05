@@ -59,10 +59,16 @@ const Navbar = () => {
     <header>
       <div 
         // ref={navRef} 
-        className="bg-red-300 h-20 flex justify-between items-center p-4 lg:px-24 lg:py-8 transition-all duration-500"
+        className=" flex justify-between items-center p-4 lg:px-24 lg:py-8 transition-all duration-500"
       >
-        <a href="#" className="text-xl font-medium">AOC Hotel and Suite</a>
-        
+
+
+          <div className="flex items-center lg:gap-6">
+        <a href="#" className="text-xl font-medium">
+          <img src="/assets/logo.png" height={60} width={60} alt="" />
+          </a>
+    <h2 className="lg:text-[22px] font-medium  ">AOC Hotel and Suite</h2>
+          </div>
         {/* Toggle button for mobile view */}
         <nav className='lg:hidden'>
           <NavButton setOpen={setOpen} />
@@ -93,7 +99,8 @@ const Navbar = () => {
           <li><a href="#">HALLS</a></li>
           <li><a href="#">CONTACT US</a></li>
         </ul>
-      </div>
+</div>
+
     </header>
   );
 };

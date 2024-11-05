@@ -6,18 +6,18 @@ const Footer = () => {
     <Container>
       <div className=" p-4 lg:flex justify-between py-10">
         {/* RIGHT */}
-        <div className="flex flex-col gap-4">
-          <img src="/assets/bathtub.png" alt="" width={60} height={60} />
+        <div className="flex items-center flex-col gap-2">
+          <img src="/assets/logo.png" alt="" width={60} height={60} />
           <div>
-            <h2>Social Media</h2>
-            <ul className="flex">
+            <h3 className="font-medium">Social Media</h3>
+            <ul className="flex gap-2">
               <li>
                 <a href="">
                   <img
                     src="/assets/facebook.png"
                     alt=""
-                    width={40}
-                    height={40}
+                    width={36}
+                    height={36}
                   />
                 </a>
               </li>
@@ -26,8 +26,8 @@ const Footer = () => {
                   <img
                     src="/assets/instagram.png"
                     alt=""
-                    width={40}
-                    height={40}
+                    width={36}
+                    height={36}
                   />
                 </a>
               </li>
@@ -41,7 +41,6 @@ const Footer = () => {
         </div>
 
         <div>
-          <div></div>
           <h2 className="text-center lg:text-[24px] mb-2 font-medium">LINK</h2>
           <ul className="items-center flex flex-col  font-medium text-[12px] lg:text-[16px]">
             <li>

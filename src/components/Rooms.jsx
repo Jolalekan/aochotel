@@ -116,18 +116,18 @@ const Rooms = () => {
             <div id={`slide-${index}`} 
                 key={slide.id} 
                 onClick={()=>navigateToRoom(slide.id)}
-                className="bg-gray-900 p-2 cursor-pointer flex flex-col opacity-0"style={{transform: `translateX(-${currentSlide })`}}
+                className="items-center bg-gray-900 p-2 cursor-pointer flex flex-col opacity-0"style={{transform: `translateX(-${currentSlide })`}}
                 
                 >
-                <div className="relative mb-3">
+                <div className="relative flex justify-center mb-3">
                 <img src={slide.img1}  className="w h-48 lg:h-96 rounded-md" alt="" />
-                <figcaption className="absolute bottom-4 left-4 text-3xl font-medium text-white">
+                <figcaption className="absolute bottom-4 left-8 text-3xl font-medium text-white">
                   {slide.title}
                   </figcaption>
                     </div>
-                <h2 className="mb-3  text-center font-medium text-lg text-gray-200">{slide.desc}</h2>
+                <h2 className="mb-3 text-center font-medium text-lg text-gray-200">{slide.desc}</h2>
                   
-                <div className=" grid grid-cols-2 gap-3  ">
+                <div className=" justify-center grid grid-cols-2 gap-3">
                   <div className="flex items-center gap-3">
                     <span>
                       <img src={slide.spanImage1} className="text-white w-6 h-6" alt="" />
