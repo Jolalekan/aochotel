@@ -56,6 +56,7 @@ const Navbar = () => {
     }
   }, [open]);
 
+  
   return (
     <header>
       <div 
@@ -66,7 +67,7 @@ const Navbar = () => {
 
           <div className="flex items-center lg:gap-6">
         <a href="#" onClick={() => navigate("/")} className="text-xl font-medium">
-          <img src="/assets/logo.png" height={60} width={60} alt="" />
+          <img src="assets\logo.png" height={60} width={60} alt="" />
           </a>
     <h2 className="lg:text-[22px] font-medium  ">AOC Hotel and Suite</h2>
           </div>
