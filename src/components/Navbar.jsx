@@ -2,14 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { NavButton } from "./NavButton";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef(null);
   const menuRef = useRef(null);
   const tl = useRef(null);
-
   // Update `scrolled` state based on scroll position
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -64,7 +65,7 @@ const Navbar = () => {
 
 
           <div className="flex items-center lg:gap-6">
-        <a href="#" className="text-xl font-medium">
+        <a href="#" onClick={() => navigate("/")} className="text-xl font-medium">
           <img src="/assets/logo.png" height={60} width={60} alt="" />
           </a>
     <h2 className="lg:text-[22px] font-medium  ">AOC Hotel and Suite</h2>
@@ -77,11 +78,12 @@ const Navbar = () => {
         {/* Main navigation for large screens */}
         <nav className='hidden lg:flex'>
           <ul className="flex gap-5 font-medium text-xl cursor-pointer">
-            <li>HOME</li>
-            <li>ROOMS & RATE</li>
-            <li>CARE HIRE</li>
-            <li>HALLS</li>
-            <li>CONTACT US</li>
+          <li><a href="" onClick={()=>{navigate("/")}}>HOME</a></li>
+          <li><a href="">ROOMS & RATE</a></li>
+          <li><a href="">CARE HIRE</a></li>
+          <li><a href="">HALLS</a></li>
+          <li><a href="">CONTACT US</a></li>
+
           </ul>
         </nav>
       </div>
@@ -93,11 +95,11 @@ const Navbar = () => {
         style={{ height: 0, opacity: 0 }}
       >
         <ul className="flex flex-col items-center gap-5 font-medium text-xl cursor-pointer p-6">
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">ROOMS & RATE</a></li>
-          <li><a href="#">CARE HIRE</a></li>
-          <li><a href="#">HALLS</a></li>
-          <li><a href="#">CONTACT US</a></li>
+          <li><a href="" onClick={()=>{navigate("/")}}>HOME</a></li>
+          <li><a href="" onClick={()=>setOpen(false)}>ROOMS & RATE</a></li>
+          <li><a href="" onClick={()=>setOpen(false)} >CARE HIRE</a></li>
+          <li><a href=""onClick={()=>setOpen(false)}>HALLS</a></li>
+          <li><a href=""onClick={()=>setOpen(false)}>CONTACT US</a></li>
         </ul>
 </div>
 
