@@ -6,58 +6,68 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const Booking = () => {
     // const navigate = useNavigate()
-  const datePickerRef = useRef(null);
-  const [startDate, setStartDate] = useState(new Date());
-  const [adultCount, setAdultCount] = useState(1);
-  const [rooms, setRooms] = useState(1);
-  const [childrenCount, setChildrenCount] = useState(0);
-
+    const arrivalDatePickerRef = useRef(null);
+    const departedDatePickerRef = useRef(null);
+    const [arrivalDate, setArrivalDate] = useState(new Date());
+    const [departedDate, setDepartedDate] = useState(new Date());
+    const [adultCount, setAdultCount] = useState(1);
+    const [rooms, setRooms] = useState(1);
+    const [childrenCount, setChildrenCount] = useState(0);
   const maxTotal = 5;
 
-  const handImageClick = () => {
-    datePickerRef.current.setFocus();
+  const handleArrivalImageClick = () => {
+    arrivalDatePickerRef.current.setFocus();
   };
+
+  const handleDepartedImageClick = () => {
+    departedDatePickerRef.current.setFocus();
+  };
+
   return (
     <Container>
       <div className=" rounded-md mt-4 gradient-bg py-10 lg:flex gap-6 items-center justify-center">
-        <div className="flex text-center flex-col gap-4 p-6  rounded-md">
-          <h3 className="font-medium text-center text-[20px] uppercase">
-            Arrival Date
-          </h3>
-          <div className="flex justify-center items-center relative lg:w-48">
-            <DatePicker
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              className=" text-[24px] p-2 pl-10 w-full  bg-red-300 cursor-pointer focus:outline-none"
-            />
-            <img
-              src="assets/calendar.png"
-              alt="calendar icon"
-              width={20}
-              height={20}
-              className=" absolute left-2  top-1/2 transform -translate-y-1/2"
-              onClick={handImageClick}
-            />
+       {/* Arrival Date */}
+      <div className="flex justify-center">
+          <div className="flex items-center justify-center flex-col gap-4 p-6 rounded-md lg:w-48">
+            <h3 className="font-medium text-center text-lg uppercase"> Arrival Date </h3>
+            <div className="flex justify-center items-center lg:w-48">
+              <DatePicker
+                ref={arrivalDatePickerRef}
+                selected={arrivalDate}
+                onChange={(date) => setArrivalDate(date)}
+                className="text-center text-lg p-2 w-full bg-transparent cursor-pointer focus:outline-none"
+              />
+              <img
+                src="assets/calendar.png"
+                alt="calendar icon"
+                width={20}
+                height={20}
+                className=" cursor-pointer"
+                onClick={handleArrivalImageClick}
+              />
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 p-6  rounded-md">
-          <h3 className="font-medium text-center text-[20px] uppercase">
-            Departed Date
-          </h3>
-          <div className="relative lg:w-48">
+
+ {/* Departed Date */}
+ <div className="flex flex-col gap-4 p-6 rounded-md">
+          <h3 className="font-medium text-center text-lg uppercase"> Departed Date </h3>
+          <div className="flex justify-center items-center lg:w-48">
             <DatePicker
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              className="text-[24px] p-2 pl-10 w-full  bg-transparent cursor-pointer focus:outline-none"
+              ref={departedDatePickerRef}
+              selected={departedDate}
+              onChange={(date) => setDepartedDate(date)}
+              className="text-center text-lg p-2 w-full bg-transparent cursor-pointer focus:outline-none"
             />
             <img
+
               src="assets/calendar.png"
               alt="calendar icon"
               width={20}
               height={20}
-              className=" absolute left-2  top-1/2 transform -translate-y-1/2"
-              onClick={handImageClick}
+              className=" cursor-pointer"
+              onClick={handleDepartedImageClick}
             />
           </div>
         </div>

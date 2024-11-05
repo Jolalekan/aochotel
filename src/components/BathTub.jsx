@@ -12,16 +12,16 @@ const BathTub = () => {
         <h3 className='font-medium text-gray-200'>MASTER BEDROOMS</h3>
       </div>
       <div className='py-4 flex flex-col gap-6 items-center'>
-        <span><img src="/assets/bathtub.png" alt="" /></span>
-        <h3 className='font-medium text-gray-200'>MASTER BEDROOMS</h3>
+        <span><img src="/assets/car-wash.png" alt="" /></span>
+        <h3 className='font-medium text-gray-200'>AIRPORT TAXI</h3>
       </div>
       <div className='py-4 flex flex-col gap-6 items-center'>
-        <span><img src="/assets/bathtub.png" alt="" /></span>
-        <h3 className='font-medium text-gray-200'>MASTER BEDROOMS</h3>
+        <span><img src="/assets/wifi.png" alt="" /></span>
+        <h3 className='font-medium text-gray-200'>WIFI COVERAGE</h3>
       </div>
       <div className='py-4 flex flex-col gap-6 items-center'>
-        <span><img src="/assets/bathtub.png" alt="" /></span>
-        <h3 className='font-medium text-gray-200'>MASTER BEDROOMS</h3>
+        <span><img src="/assets/salad-bowl.png" alt="" /></span>
+        <h3 className='font-medium text-gray-200'>BREAKFAST</h3>
       </div>
       {/* <div className='lg:flex  '> */}
       <div className='py-4 flex flex-col gap-6 items-center'>
