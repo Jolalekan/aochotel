@@ -57,10 +57,10 @@ const SingleRooms = () => {
 
   return (
     <Container>
-      <div className="flex flex-col gap-10 ">
-        <div className="flex gap-6">
+      <div className="flex flex-col gap-10 py-5 ">
+        <div className="md:flex  gap-6">
           {/* LEFT */}
-          <div className="w-2/3 flex  flex-col gap-10">
+          <div className="p-4 lg:w-2/3 flex  items-center flex-col gap-10">
             {/* TOP */}
             <div className="h-[500px] w-full ">
               <img
@@ -73,7 +73,7 @@ const SingleRooms = () => {
             <div className="flex gap-4">
               {images.map((image) => (
                 <div
-                  className="w-[180px] h-[180px] cursor-pointer hover:opacity-80"
+                  className="w-[60px] lg:w-[180px] lg:h-[180px] cursor-pointer hover:opacity-80"
                   onClick={() => setActiveImage(image.src)}
                   key={image.id}
                 >
@@ -88,21 +88,21 @@ const SingleRooms = () => {
             {/* BOTTOM */}
           </div>
 
-          <div className="w-1/3 bg-gray-800 rounded-xl py-4">
+          <div className="lg:w-1/3 bg-gray-800 rounded-xl py-4">
             <div className=" flex flex-col items-center gap-3 mb-2 border-b border-gray-700">
-              <h3 className="font-medium text-[28px] text-center">
+              <h3 className="font-medium text-[26px] lg:text-[28px] text-center">
                 DESCRIPTION
               </h3>
-              <span className="text-[26px] font-medium">Executive Room</span>
+              <span className="text-[22px] lg:text-[26px] font-medium">Executive Room</span>
 
-              <p className="text-[36px] font-medium mb-4">
+              <p className="text-[26px] lg:text-[36px] font-medium mb-4">
                 # 72,0000 <span className="text-[16px]">/Night </span>
               </p>
             </div>
            
             <div className="flex flex-col gap-4 items-center">
               <div className="flex flex-col rounded-md ">
-                <h3 className="font-medium text-center text-[20px] uppercase">
+                <h3 className="font-medium text-center text-[18px] lg:text-[20px] uppercase">
                   Arrival Date
                 </h3>
                 <div className="relative">
@@ -132,8 +132,8 @@ const SingleRooms = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col gap-4 rounded-md ">
-                <h3 className="font-medium text-center text-[20px] uppercase">
+              <div className="flex flex-col  rounded-md ">
+                <h3 className="font-medium text-center text-[18px] lg:text-[20px] uppercase">
                   Arrival Date
                 </h3>
                 <div className="relative">
@@ -165,7 +165,7 @@ const SingleRooms = () => {
               </div>
 
               <div className="flex flex-col   items-center w-[270px]">
-          <h3 className="font-medium text-center text-[20px] uppercase">
+          <h3 className="font-medium text-center text-[18px] lg:text-[20px] uppercase">
             ADULTS
           </h3>
           <div className="flex gap-6 bg-gray-400 w-full justify-between px-4 rounded-md text-black font-bold">
@@ -192,7 +192,7 @@ const SingleRooms = () => {
         </div>
 
         <div className="flex flex-col   items-center w-[270px]">
-          <h3 className="font-medium text-center text-[20px] uppercase">
+          <h3 className="font-medium text-center text-[18px] lg:text-[20px]  uppercase">
             ROOMS
           </h3>
 
@@ -216,7 +216,7 @@ const SingleRooms = () => {
         </div>
 
         <div className="flex flex-col items-center w-[270px]">
-          <h3 className="font-medium text-center text-[20px] uppercase">
+          <h3 className="font-medium text-center text-[18px] lg:text-[20px] uppercase">
             CHILDREN
           </h3>
           <div className="flex gap-6 bg-gray-400 w-full justify-between px-4 rounded-md text-black font-bold">
@@ -254,52 +254,52 @@ const SingleRooms = () => {
 
         <div className="border-t border-gray-400 border-b">
 
-        <div className="flex bg-gray-800 p-6">
-          <div className="w-1/3 border-r border-gray-400">
-          <h2 className=" text-[26px] font-medium uppercase">Description</h2>
+        <div className="lg:flex bg-gray-800 p-6">
+          <div className="lg:w-1/3 border-r border-gray-400">
+          <h2 className="text-center text-[22px] lg:text-[26px] font-medium uppercase">Description</h2>
           </div>
-              <div className="w-2/3 px-3">
-                <div className="flex flex-col gap-2">
-                  <h3 className="font-medium text-[20px]">EXECUTIVE ROOM</h3>
+              <div className="lg:w-2/3 px-3">
+                <div className="items-center flex flex-col gap-2">
+                  <h3 className="font-medium  text-[20px]">EXECUTIVE ROOM</h3>
                   <p className="text-gray-200">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime repellat perspiciatis, saepe ipsa eaque velit quibusdam, quo mollitia suscipit laborum, et explicabo? Eaque veritatis esse placeat blanditiis ab quibusdam rem.</p>
                 </div>
                   <h3 className="font-medium py-3">FEATURES</h3>
                   <div className="flex flex-col gap-2 border border-gray-300 rounded-md">
 
                   <div className="grid p-2 gap-2 grid-cols-4 ">
-                  <div className="flex gap-4 border p-4">
+                  <div className="flex items-center justify-center gap-4 border p-4">
                     <div><img src="/assets/wifi.png" width={20} height={20} alt="" /></div>
-                    <h2 className="text-[16px]">Wifi</h2>
+                    <h2 className="hidden lg:block text-[16px]">Wifi</h2>
                   </div>   
-                  <div className="flex gap-4 border p-4">
+                  <div className="flex items-center justify-center gap-4 border p-4">
                     <div><img src="/assets/bathtub.png" width={20} height={20} alt="" /></div>
-                    <h2 className="text-[16px]">Bathtub</h2>
+                    <h2 className="hidden lg:block text-[16px]">Bathtub</h2>
                   </div>   
-                  <div className="flex gap-4 border p-4">
+                  <div className="flex items-center justify-center gap-4 border p-4">
                     <div><img src="/assets/salad-bowl.png" width={20} height={20} alt="" /></div>
-                    <h2 className="text-[16px]">Breakfast</h2>
+                    <h2 className="hidden lg:block text-[16px]">Breakfast</h2>
                   </div>   
-                  <div className="flex gap-4 border p-4">
+                  <div className="flex items-center justify-center gap-4 border p-4">
                     <div><img src="/assets/car-wash.png" width={20} height={20} alt="" /></div>
-                    <h2 className="text-[16px]">Car wash</h2>
+                    <h2 className="hidden lg:block text-[16px]">Car wash</h2>
                   </div>   
                   </div>
                   <div className="grid p-2 gap-2 grid-cols-4 ">
-                  <div className="flex gap-4 border p-4">
+                  <div className="flex items-center justify-center gap-4 border p-4">
                     <div><img src="/assets/wifi.png" width={20} height={20} alt="" /></div>
-                    <h2 className="text-[16px]">Wifi</h2>
+                    <h2 className="hidden lg:block text-[16px]">Wifi</h2>
                   </div>   
-                  <div className="flex gap-4 border p-4">
+                  <div className="flex items-center justify-center gap-4 border p-4">
                     <div><img src="/assets/bathtub.png" width={20} height={20} alt="" /></div>
-                    <h2 className="text-[16px]">Bathtub</h2>
+                    <h2 className="hidden lg:block text-[16px]">Bathtub</h2>
                   </div>   
-                  <div className="flex gap-4 border p-4">
+                  <div className="flex items-center justify-center gap-4 border p-4">
                     <div><img src="/assets/salad-bowl.png" width={20} height={20} alt="" /></div>
-                    <h2 className="text-[16px]">Breakfast</h2>
+                    <h2 className="hidden lg:block text-[16px]">Breakfast</h2>
                   </div>   
-                  <div className="flex gap-4 border p-4">
+                  <div className="flex items-center justify-center gap-4 border p-4">
                     <div><img src="/assets/car-wash.png" width={20} height={20} alt="" /></div>
-                    <h2 className="text-[16px]">Car wash</h2>
+                    <h2 className="hidden lg:block text-[16px]">Car wash</h2>
                   </div>   
                   </div>
               </div>

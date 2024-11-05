@@ -19,19 +19,19 @@ const Booking = () => {
   };
   return (
     <Container>
-      <div className="mt-4 gradient-bg py-20 h-20 flex gap-6 items-center justify-between">
-        <div className="flex flex-col gap-4 p-6  rounded-md">
+      <div className=" rounded-md mt-4 gradient-bg py-10 lg:flex gap-6 items-center justify-center">
+        <div className="flex text-center flex-col gap-4 p-6  rounded-md">
           <h3 className="font-medium text-center text-[20px] uppercase">
             Arrival Date
           </h3>
-          <div className="relative w-48">
+          <div className="flex justify-center items-center relative lg:w-48">
             <DatePicker
               selected={startDate}
               onChange={(date) => setStartDate(date)}
-              className="text-[24px] p-2 pl-10 w-full  bg-transparent cursor-pointer focus:outline-none"
+              className=" text-[24px] p-2 pl-10 w-full  bg-red-300 cursor-pointer focus:outline-none"
             />
             <img
-              src="/assets/calendar.png"
+              src="assets/calendar.png"
               alt="calendar icon"
               width={20}
               height={20}
@@ -45,14 +45,14 @@ const Booking = () => {
           <h3 className="font-medium text-center text-[20px] uppercase">
             Departed Date
           </h3>
-          <div className="relative w-48">
+          <div className="relative lg:w-48">
             <DatePicker
               selected={startDate}
               onChange={(date) => setStartDate(date)}
               className="text-[24px] p-2 pl-10 w-full  bg-transparent cursor-pointer focus:outline-none"
             />
             <img
-              src="/assets/calendar.png"
+              src="assets/calendar.png"
               alt="calendar icon"
               width={20}
               height={20}
@@ -62,7 +62,7 @@ const Booking = () => {
           </div>
         </div>
 
-        <div className="flex flex-col  p-4 items-center w-48">
+        <div className="flex flex-col  p-4 items-center lg:w-48">
           <h3 className="font-medium text-center text-[20px] uppercase">
             ADULTS
           </h3>
@@ -89,7 +89,7 @@ const Booking = () => {
           </div>
         </div>
 
-        <div className="flex flex-col  p-4 items-center w-48">
+        <div className="flex flex-col  p-4 items-center lg:w-48">
           <h3 className="font-medium text-center text-[20px] uppercase">
             ROOMS
           </h3>
@@ -112,7 +112,7 @@ const Booking = () => {
             </button>
           </div>
         </div>
-        <div className="flex flex-col  p-4 items-center w-48">
+        <div className="flex flex-col  p-4 items-center lg:w-48">
           <h3 className="font-medium text-center text-[20px] uppercase">
             CHILDREN
           </h3>
@@ -140,7 +140,7 @@ const Booking = () => {
             </button>
           </div>
         </div>
-        <div className="flex flex-col  p-4 items-center w-48">
+        <div className="flex flex-col  p-4 items-center lg:w-48">
           <button className="hover:opacity-75 bg-black rounded-md font-medium text-center text-[20px] uppercase py-6 px-3">
             CHECK AVAILABILITY
           </button>
