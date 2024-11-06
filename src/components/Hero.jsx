@@ -44,7 +44,7 @@ const Hero = () => {
           ref={textRef}
           className="h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center text-center"
         >
-          <div className="flex flex-col gap-4 items-center justify-center">
+          <div className="flex flex-col gap-2 items-center justify-center">
             <h1 className="gradient__text text-[32px] lg:text-[72px] font-bold leading-tight">
               Welcome to AOC Hotel
             </h1>
