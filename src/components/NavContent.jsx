@@ -21,5 +21,4 @@ const NavContent = ({open, setOpen}) => {
         
   )
 }
-
 export default NavContent

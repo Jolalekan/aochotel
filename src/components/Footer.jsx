@@ -93,21 +93,7 @@ const Footer = () => {
               <img src="assets/mail.png" className="w-6 h-6" alt="" />
               <h2 className="font-medium text-[14px]">info@aoc@gmail.com</h2>
             </div>
-            <div>
-              <form action="" className="lg:w-36">
-                <div className="flex flex-col gap-2">
-                  <h2>Subscribe to our News Letter</h2>
-                  <input
-                    type="text"
-                    placeholder="Email"
-                    className="p-2 rounded-md text-gray-900 text-center focus:outline-none"
-                  />
-                  <button className="gradient-bg p-2 rounded-md hover:opacity-70 cursor-pointer">
-                    SUBSCRIBE
-                  </button>
-                </div>
-              </form>
-            </div>
+              <h2>12, Michael Street, Off <br /> Ogunlana road Lagos, Nigeria</h2>
           </div>
         </div>
       </div>
