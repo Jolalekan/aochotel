@@ -1,40 +1,56 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { NavButton } from "./NavButton";
 import { useNavigate } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef(null);
+  const logoRef = useRef(null);
   const menuRef = useRef(null);
   const tl = useRef(null);
-  // Update `scrolled` state based on scroll position
+
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      if (scrollTop > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle navbar background animation on scroll
   useGSAP(() => {
-    console.log("Applying GSAP styles"); // Check if this runs as expected
-    if (navRef.current) {
-      const padding = scrolled ? "6.4px 96px" : "32px 96px"; // Adjust padding for large screens
-      const backgroundColor = scrolled ? "#040c18" : "";
-
-      gsap.to(navRef.current, {
-        backgroundColor,
-        padding,
+    if (navRef.current && window.innerWidth > 768) { // Add this condition
+      (gsap.to)(navRef.current, {
+        backgroundColor: scrolled ? "#040C18" : "",
+        padding: scrolled ? "6.4px 96px" : "32px 96px",
         duration: 0.5,
         ease: "back",
       });
     }
   }, [scrolled]);
 
-  // Initialize GSAP timeline for menu
+  useGSAP(() => {
+    const mediaQuery = window.matchMedia("(max-width: 1000px)");
+    if (mediaQuery.matches) {
+      const tlLogo = gsap.timeline();
+      tlLogo.fromTo(
+        logoRef.current,
+        { y: 115, opacity: 0 },
+        { y: 0, opacity: 1, delay: 0.5, duration: 1 }
+      );
+    }
+  }, []);
+
+  // Initialize GSAP timeline for mobile menu
   useEffect(() => {
     if (menuRef.current) {
       tl.current = gsap.timeline({ paused: true })
@@ -47,7 +63,7 @@ const Navbar = () => {
     }
   }, []);
 
-  // Play or reverse the timeline based on `open` state
+  // Play or reverse the menu animation based on `open` state
   useEffect(() => {
     if (open) {
       tl.current.play();
@@ -56,33 +72,32 @@ const Navbar = () => {
     }
   }, [open]);
 
-  
   return (
     <header>
-      <div 
-        // ref={navRef} 
-        className="flex justify-between items-center p-4 lg:px-24 lg:py-8 transition-all duration-500"
+      <div
+        ref={navRef}
+        className="fixed z-50 flex w-full justify-between items-center p-4 lg:px-24 lg:py-8 transition-all duration-500"
       >
-          <div className="flex items-center lg:gap-6">
-        <a href="#" onClick={() => navigate("/")} className="text-xl font-medium">
-        <img src="/assets/logo.png" height={60} width={60} alt="" />
+        <div ref={logoRef} className="flex items-center lg:gap-6">
+          <a href="#" onClick={() => navigate("/")} className="text-xl font-medium">
+            <img src="/assets/logo.png" height={60} width={60} alt="" />
           </a>
-    <h2 className="lg:text-[22px] font-medium  ">AOC Hotel and Suite</h2>
-          </div>
+          <h2 className="lg:text-[22px] font-medium">AOC Hotel and Suite</h2>
+        </div>
+
         {/* Toggle button for mobile view */}
-        <nav className='lg:hidden'>
+        <nav className="lg:hidden">
           <NavButton setOpen={setOpen} />
         </nav>
 
         {/* Main navigation for large screens */}
-        <nav className='hidden lg:flex'>
+        <nav className="hidden lg:flex">
           <ul className="flex gap-5 font-medium text-xl cursor-pointer">
-          <li><a href="" onClick={()=>{navigate("/")}}>HOME</a></li>
-          <li><a href="">ROOMS & RATE</a></li>
-          <li><a href="">CARE HIRE</a></li>
-          <li><a href="">HALLS</a></li>
-          <li><a href="">CONTACT US</a></li>
-
+            <li><a href="#" onClick={() => navigate("/")}>HOME</a></li>
+            <li><a href="#">ROOMS & RATE</a></li>
+            <li><a href="#">CAR HIRE</a></li>
+            <li><a href="#">HALLS</a></li>
+            <li><a href="#">CONTACT US</a></li>
           </ul>
         </nav>
       </div>
@@ -94,19 +109,19 @@ const Navbar = () => {
         style={{ height: 0, opacity: 0 }}
       >
         <ul className="flex flex-col items-center gap-5 font-medium text-xl cursor-pointer p-6">
-          <li><a href="" onClick={()=>{navigate("/")}}>HOME</a></li>
-          <li><a href="" onClick={()=>setOpen(false)}>ROOMS & RATE</a></li>
-          <li><a href="" onClick={()=>setOpen(false)} >CARE HIRE</a></li>
-          <li><a href=""onClick={()=>setOpen(false)}>HALLS</a></li>
-          <li><a href=""onClick={()=>setOpen(false)}>CONTACT US</a></li>
+          <li><a href="#" onClick={() => navigate("/")}>HOME</a></li>
+          <li><a href="#" onClick={() => setOpen(false)}>ROOMS & RATE</a></li>
+          <li><a href="#" onClick={() => setOpen(false)}>CAR HIRE</a></li>
+          <li><a href="#" onClick={() => setOpen(false)}>HALLS</a></li>
+          <li><a href="#" onClick={() => setOpen(false)}>CONTACT US</a></li>
         </ul>
-</div>
-
+      </div>
     </header>
   );
 };
 
 export default Navbar;
+
 
 
 
