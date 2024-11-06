@@ -61,13 +61,11 @@ const Navbar = () => {
     <header>
       <div 
         // ref={navRef} 
-        className=" flex justify-between items-center p-4 lg:px-24 lg:py-8 transition-all duration-500"
+        className="flex justify-between items-center p-4 lg:px-24 lg:py-8 transition-all duration-500"
       >
-
-
           <div className="flex items-center lg:gap-6">
         <a href="#" onClick={() => navigate("/")} className="text-xl font-medium">
-          <img src="assets\logo.png" height={60} width={60} alt="" />
+        <img src="/assets/logo.png" height={60} width={60} alt="" />
           </a>
     <h2 className="lg:text-[22px] font-medium  ">AOC Hotel and Suite</h2>
           </div>
@@ -75,7 +73,7 @@ const Navbar = () => {
         <nav className='lg:hidden'>
           <NavButton setOpen={setOpen} />
         </nav>
-        
+
         {/* Main navigation for large screens */}
         <nav className='hidden lg:flex'>
           <ul className="flex gap-5 font-medium text-xl cursor-pointer">
@@ -92,7 +90,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         ref={menuRef}
-        className="bg-yellow-300 absolute md:hidden top-20 left-0 w-full overflow-hidden z-50"
+        className="nav-bg absolute md:hidden top-20 left-0 w-full overflow-hidden z-50"
         style={{ height: 0, opacity: 0 }}
       >
         <ul className="flex flex-col items-center gap-5 font-medium text-xl cursor-pointer p-6">

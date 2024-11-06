@@ -7,14 +7,14 @@ const Footer = () => {
       <div className=" p-4 lg:flex justify-between py-10">
         {/* RIGHT */}
         <div className="flex items-center flex-col gap-2">
-          <img src="/assets/logo.png" alt="" width={60} height={60} />
+          <img src="assets/logo.png" alt="" width={60} height={60} />
           <div>
             <h3 className="font-medium">Social Media</h3>
             <ul className="flex gap-2">
               <li>
                 <a href="">
                   <img
-                    src="/assets/facebook.png"
+                    src="assets/facebook.png"
                     alt=""
                     width={36}
                     height={36}
@@ -24,7 +24,7 @@ const Footer = () => {
               <li>
                 <a href="">
                   <img
-                    src="/assets/instagram.png"
+                    src="assets/instagram.png"
                     alt=""
                     width={36}
                     height={36}
@@ -33,7 +33,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="">
-                  <img src="/assets/tiktok.png" alt="" width={40} height={40} />
+                  <img src="assets/tiktok.png" alt="" width={40} height={40} />
                 </a>
               </li>
             </ul>
@@ -82,11 +82,11 @@ const Footer = () => {
           <h2 className="lg:text-[24px] text-center font-medium">CONTACT</h2>
           <div className="items-center flex flex-col ">
             <div className="p-2 flex items-center space-x-4">
-              <img src="/assets/phone.png" className="w-6 h-6" alt="" />
+              <img src="assets/phone.png" className="w-6 h-6" alt="" />
               <h2 className="font-medium text-[12px]">+23480-343-4343</h2>
             </div>
             <div className="flex p-2 items-center space-x-4">
-              <img src="/assets/mail.png" className="w-6 h-6" alt="" />
+              <img src="assets/mail.png" className="w-6 h-6" alt="" />
               <h2 className="font-medium text-[12px]">info@aoc@gmail.com</h2>
             </div>
             <div>
