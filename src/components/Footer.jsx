@@ -3,8 +3,8 @@ import Container from "./Container";
 
 const Footer = () => {
   return (
-    <Container>
-      <div className=" p-4 lg:flex justify-between py-10">
+  <footer className="gradient-bg mt-6">   
+      <div className="mx-auto max-w-7xl p-4 lg:flex justify-between py-10">
         {/* RIGHT */}
         <div className="flex items-center flex-col gap-2">
         
@@ -98,7 +98,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center">&copy; copyright </div>
-    </Container>
+      </footer> 
   );
 };
 

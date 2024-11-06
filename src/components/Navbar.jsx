@@ -4,6 +4,7 @@ import { NavButton } from "./NavButton";
 import { useNavigate } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import Container from "./Container";
+import { MenuItems } from "../page/utils/menuItems";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -14,6 +15,10 @@ const Navbar = () => {
   const menuRef = useRef(null);
   const tl = useRef(null);
   const mm = useRef(null);
+  const path1 = useRef(null);
+  const path2 = useRef(null);
+  const path3 = useRef(null);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,10 +99,19 @@ const Navbar = () => {
     }
   }, [open]);
 
+  const toggleMenu = () => {
+    setOpen(!open);
+  }
+
+  // Handle navigation with menu close
+  const handleNavigation = (path) => {
+    navigate(path);
+    setOpen(false);
+  };
+
   return (
     <header>
       <div
-        // ref={navRef}
         className="gradient-bg fixed h-20 lg:py-16 px-4 z-50 flex w-full justify-between items-center lg:px-24 transition-all duration-500"
       >
         <div ref={logoRef} className="flex items-center lg:gap-6">
@@ -108,17 +122,23 @@ const Navbar = () => {
         </div>
         {/* Toggle button for mobile view */}
         <nav className="lg:hidden">
-          <NavButton setOpen={setOpen} />
+        <button onClick={toggleMenu}>
+    <svg width="40" height="40" viewBox="0 0 23 23">
+      <path id="path1" strokeWidth="3" stroke="white" strokeLinecap="round" d="M 5 2.5 L 20 2.5" />
+      <path id="path2" strokeWidth="3" stroke="white" strokeLinecap="round" d="M 4 9.423 L 20 9.423" />
+      <path id="path3" strokeWidth="3" stroke="white" strokeLinecap="round" d="M 2 16.346 L 20 16.346" />
+    </svg>
+  </button>
         </nav>
 
         {/* Main navigation for large screens */}
         <nav className="hidden lg:flex">
           <ul className="flex gap-5 font-medium text-xl cursor-pointer">
-            <li><a href="#" onClick={() => navigate("/")}>HOME</a></li>
-            <li><a href="#">ROOMS & RATE</a></li>
-            <li><a href="#">CAR HIRE</a></li>
-            <li><a href="#">HALLS</a></li>
-            <li><a href="#">CONTACT US</a></li>
+            {MenuItems.map((item)=>(
+              <li key={item.name}>
+                <a href="#" onClick={()=> handleNavigation(item.path)}>{item.name} </a>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
@@ -130,11 +150,11 @@ const Navbar = () => {
         style={{ height: 0, opacity: 0 }}
       >
         <ul className=" gradient__text flex flex-col items-center gap-5 font-medium text-xl cursor-pointer p-6">
-          <li><a href="#" onClick={() => navigate("/")}>HOME</a></li>
-          <li><a href="#" onClick={() => setOpen(false)}>ROOMS & RATE</a></li>
-          <li><a href="#" onClick={() => setOpen(false)}>CAR HIRE</a></li>
-          <li><a href="#" onClick={() => setOpen(false)}>HALLS</a></li>
-          <li><a href="#" onClick={() => setOpen(false)}>CONTACT US</a></li>
+            {MenuItems.map((item)=>(
+              <li key={item.name}>
+                <a href="#" onClick={()=>handleNavigation(item.path)}>{item.name}</a>
+              </li>
+            ))}
         </ul>
       </div>
     </header>
