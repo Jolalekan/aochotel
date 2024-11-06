@@ -87,14 +87,14 @@ const Footer = () => {
           <div className="items-center flex flex-col ">
             <div className="p-2 flex items-center space-x-4">
               <img src="assets/phone.png" className="w-6 h-6" alt="" />
-              <h2 className="font-medium text-[12px]">+23480-343-4343</h2>
+              <h2 className="font-medium text-[14px]">+23480-343-4343</h2>
             </div>
             <div className="flex p-2 items-center space-x-4">
               <img src="assets/mail.png" className="w-6 h-6" alt="" />
-              <h2 className="font-medium text-[12px]">info@aoc@gmail.com</h2>
+              <h2 className="font-medium text-[14px]">info@aoc@gmail.com</h2>
             </div>
             <div>
-              <form action="" className="w-36">
+              <form action="" className="lg:w-36">
                 <div className="flex flex-col gap-2">
                   <h2>Subscribe to our News Letter</h2>
                   <input
@@ -102,7 +102,7 @@ const Footer = () => {
                     placeholder="Email"
                     className="p-2 rounded-md text-gray-900 text-center focus:outline-none"
                   />
-                  <button className="bg-yellow-400 p-2 rounded-md hover:opacity-70 cursor-pointer">
+                  <button className="gradient-bg p-2 rounded-md hover:opacity-70 cursor-pointer">
                     SUBSCRIBE
                   </button>
                 </div>
@@ -111,7 +111,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div>&copy; copyright </div>
+      <div className="text-center">&copy; copyright </div>
     </Container>
   );
 };

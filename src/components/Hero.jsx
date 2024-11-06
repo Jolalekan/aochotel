@@ -58,15 +58,21 @@ const Hero = () => {
               pariatur liber
             </p>
             <button
-              className="text-2xl gradient-bg font-bold opacity-100 hover:opacity-90 transition-opacity duration-500 ease-in-out p-4 
-                rounded-md 
-                bg-gradient-to-r 
-                from-blue-500 
-                to-purple-500 
-                text-white"
-            >
-              BOOK NOW
-            </button>
+className=" lg:text-3xl gradient-bg font-bold opacity-100 hover:opacity-90 transition-opacity duration-500
+ease-in-out
+p-4
+rounded-md
+bg-gradient-to-r
+from-blue-500
+to-purple-500
+text-white
+shadow-md
+hover:scale-105
+"
+> 
+Reserve Your Room Now!
+</button>
+
           </div>
         </div>
         <div ref={heroRef} className="h-1/2 lg:w-1/2 lg:h-full">
