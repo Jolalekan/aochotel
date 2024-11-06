@@ -7,9 +7,13 @@ const Footer = () => {
       <div className=" p-4 lg:flex justify-between py-10">
         {/* RIGHT */}
         <div className="flex items-center flex-col gap-2">
-          <img src="assets/logo.png" alt="" width={60} height={60} />
+        
+        <div className="flex items-center">
+            <img src="assets/logo.png" alt="" width={60} height={60} />
+          <h3 className="font-medium">Hotel and suites</h3>
+          </div>
           <div>
-            <h3 className="font-medium">Social Media</h3>
+            <h3 className="hidden lg:block font-medium">Social Media</h3>
             <ul className="flex gap-2">
               <li>
                 <a href="">

@@ -28,7 +28,7 @@ const Navbar = () => {
   }, []);
 
   useGSAP(() => {
-    if (navRef.current && window.innerWidth > 768) { // Add this condition
+    if (navRef.current && window.innerWidth > 768) {
       (gsap.to)(navRef.current, {
         backgroundColor: scrolled ? "#040C18" : "",
         padding: scrolled ? "6.4px 96px" : "32px 96px",
@@ -76,7 +76,7 @@ const Navbar = () => {
     <header>
       <div
         ref={navRef}
-        className="fixed z-50 flex w-full justify-between items-center p-4 lg:px-24 lg:py-8 transition-all duration-500"
+        className="h-20 z-50 flex w-full justify-between items-center p-4 lg:px-24 lg:py-8 transition-all duration-500"
       >
         <div ref={logoRef} className="flex items-center lg:gap-6">
           <a href="#" onClick={() => navigate("/")} className="text-xl font-medium">
@@ -105,10 +105,10 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         ref={menuRef}
-        className="nav-bg absolute md:hidden top-20 left-0 w-full overflow-hidden z-50"
+        className=" nav-bg absolute md:hidden top-20 left-0 w-full overflow-hidden z-50"
         style={{ height: 0, opacity: 0 }}
       >
-        <ul className="flex flex-col items-center gap-5 font-medium text-xl cursor-pointer p-6">
+        <ul className="gradient__text flex flex-col items-center gap-5 font-medium text-xl cursor-pointer p-6">
           <li><a href="#" onClick={() => navigate("/")}>HOME</a></li>
           <li><a href="#" onClick={() => setOpen(false)}>ROOMS & RATE</a></li>
           <li><a href="#" onClick={() => setOpen(false)}>CAR HIRE</a></li>
