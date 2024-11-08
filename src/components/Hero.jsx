@@ -39,15 +39,14 @@ const Hero = () => {
   }, []);
   return (
     <div className=" h-screen overflow-hidden">
-      <div className="lg:flex items-center justify-center h-full lg:h-full">
+      <div className="lg:flex flex-col gap-6 items-center justify-center h-full lg:h-full">
         <div
-          ref={textRef}
+          // ref={textRef}
           className="h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center text-center"
-        >
-          <div className="flex  items-center justify-center">
-          <div className="w-[700px] flex gap-6 items-center flex-col">
+        >   
+          <div className="mt-16 px-24 flex items-center flex-col">
 
-            <h1 className="gradient__text text-[32px] lg:text-[62px] font-bold leading-tight">
+            <h1 className="gradient__text text-[28px] lg:text-[62px] font-bold leading-tight">
               Welcome to AOC Hotel
             </h1>
             <div className="flex items-center">
@@ -55,27 +54,28 @@ const Hero = () => {
               <h2>HOTELS AND BARS</h2>
               <span className="w-10 h-[3px] bg-gray-500"></span>
             </div>
-            <p cclassName="text-gray-200 font-medium lg:text-xl text-[16px]">
+            <p className="mb-2 leading-tight text-gray-200 font-medium lg:text-xl text-[16px]">
               Lorem ipsum sit amet <br /> consectetur quia? Totam
               pariatur liber
             </p>
+
+            <div className="">
+
             <button
-className=" lg:text-3xl gradient-bg font-bold opacity-100 hover:opacity-90 transition-opacity duration-500
-ease-in-out
-p-4
-rounded-md
+className="w-48 lg:text-3xl gradient-bg font-bold opacity-100 hover:opacity-90 transition-opacity duration-500 ease-in-out p-4 rounded-md
 bg-gradient-to-r
 from-blue-500
 to-purple-500
 text-white
-shadow-md
+shadow-lg
 hover:scale-105
 "
 > 
-Reserve Your Room Now!
+Book Now!
 </button>
-
 </div>
+
+
           </div>
         </div>
         <div ref={heroRef} className="h-1/2 lg:w-1/2 lg:h-full">
