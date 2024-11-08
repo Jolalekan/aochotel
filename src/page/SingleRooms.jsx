@@ -110,7 +110,6 @@ const SingleRooms = () => {
                     <DatePicker
                       selected={startDate}
                       onChange={(date) => setStartDate(date)}
-                      showTimeSelect
                       className="text-[20px] p-1 pl-10 w-full text-black bg-slate-400 rounded-md cursor-pointer focus:outline-none"
                     />
                     <img
@@ -141,7 +140,6 @@ const SingleRooms = () => {
                     <DatePicker
                       selected={startDate}
                       onChange={(date) => setStartDate(date)}
-                      showTimeSelect
                       className="text-[20px] p-1 pl-10 w-full text-black bg-slate-400 rounded-md cursor-pointer focus:outline-none"
                     />
                     <img
