@@ -109,14 +109,14 @@ const Navbar = () => {
   return (
     <header>
       <div
-        className="gradient-bg fixed h-20 lg:py-16 px-4 z-50 flex w-full justify-between items-center lg:px-24 transition-all duration-500"
+        className=" gradient-bg fixed h-20 lg:py-16  z-50 flex w-full justify-between items-center lg:px-24 transition-all duration-500"
       >
         <div ref={logoRef}>
           <a href="#" onClick={() => navigate("/")} className="text-xl font-medium">
            <div className="flex items-center lg:gap-6">
 
             <img src="/assets/logo.png" height={60} width={60} alt="" />
-          <span className="lg:text-[22px] font-medium">AOC Hotel and Suite</span>
+          <span className="lg:text-[22px] text-[18px] font-medium">AOC Hotel and Suite</span>
            </div>
           </a>
         </div>
