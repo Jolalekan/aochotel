@@ -10,7 +10,7 @@ const Footer = () => {
         
         <div className="flex items-center">
             <img src="assets/logo.png" alt="" width={60} height={60} />
-          <h3 className="font-medium">Hotel and suites</h3>
+          <h3 className="font-medium">AOC Hotel and suites</h3>
           </div>
           <div>
             <h3 className="hidden lg:block font-medium">Social Media</h3>

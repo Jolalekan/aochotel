@@ -39,12 +39,12 @@ const Hero = () => {
   }, []);
   return (
     <div className=" h-screen overflow-hidden">
-      <div className="lg:flex flex-col gap-6 items-center justify-center h-full lg:h-full">
+      <div className="lg:flex gap-6 items-center justify-center h-full lg:h-full">
         <div
           // ref={textRef}
           className="h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center text-center"
         >   
-          <div className="mt-16 px-24 flex items-center flex-col">
+          <div className="mt-16 px-24 flex lg:gap-6 items-center flex-col">
 
             <h1 className="gradient__text text-[28px] lg:text-[62px] font-bold leading-tight">
               Welcome to AOC Hotel

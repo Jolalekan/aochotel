@@ -116,7 +116,7 @@ const Rooms = () => {
             <div id={`slide-${index}`} 
                 key={slide.id} 
                 onClick={()=>navigateToRoom(slide.id)}
-                className="items-center bg-gray-900 p-2 cursor-pointer flex flex-col opacity-0"style={{transform: `translateX(-${currentSlide })`}}
+                className="shadow-lg hover:scale-105 items-center bg-gray-900 p-2 cursor-pointer flex flex-col"style={{transform: `translateX(-${currentSlide })`}}
                 
                 >
                 <div className="relative flex justify-center mb-3">
@@ -160,23 +160,6 @@ const Rooms = () => {
         </div>
 
         </main>
-
-        {/* <div className="w-auto bg-red-500 left-1/2 transform translate-x-1/2 flex gap-4">
-          {slides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={`w-3 h-3 rounded-full ring-1 flex items-center justify-ce
-                nter cursor-pointer ${
-                currentSlide === index ? "scale-150 bg-gray-200" : "bg-gray-500"
-              }`}
-              onClick={() => setCurrentSlide(index)}
-            >
-              {currentSlide === index && (
-                <div className="w-[6px] h-[6px] bg-white rounded-full"></div>
-              )}
-            </div>
-          ))}
-        </div> */}
  
     </Container>
   );
