@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { NavButton } from "./NavButton";
 import { useNavigate } from "react-router-dom";
-import { useGSAP } from "@gsap/react";
-import Container from "./Container";
 import { MenuItems } from "../page/utils/menuItems";
+import OutsideClickHandler from 'react-outside-click-handler';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -106,7 +104,6 @@ const Navbar = () => {
   // Handle navigation with menu close
   const handleNavigation = (path) => {
     navigate(path);
-    setOpen(false);
   };
 
   return (
@@ -125,6 +122,14 @@ const Navbar = () => {
         </div>
         {/* Toggle button for mobile view */}
         <nav className="lg:hidden">
+          {
+            open? (
+              <button onClick={()=>setOpen(false)}>
+                <img src="/assets/cancel.png" alt="" />
+              </button>
+
+            ): (
+              
         <button onClick={toggleMenu}>
     <svg width="40" height="40" viewBox="0 0 23 23">
       <path id="path1" strokeWidth="3" stroke="white" strokeLinecap="round" d="M 5 2.5 L 20 2.5" />
@@ -132,9 +137,15 @@ const Navbar = () => {
       <path id="path3" strokeWidth="3" stroke="white" strokeLinecap="round" d="M 2 16.346 L 20 16.346" />
     </svg>
   </button>
+            )
+          }
         </nav>
-
         {/* Main navigation for large screens */}
+        <OutsideClickHandler
+      onOutsideClick={() => {
+        setOpen(false);
+      }}
+    >
         <nav className="hidden lg:flex">
           <ul className="flex gap-5 font-medium text-xl cursor-pointer">
             {MenuItems.map((item)=>(
@@ -144,6 +155,7 @@ const Navbar = () => {
             ))}
           </ul>
         </nav>
+            </OutsideClickHandler>
       </div>
 
       {/* Mobile Menu */}
