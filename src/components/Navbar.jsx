@@ -114,11 +114,14 @@ const Navbar = () => {
       <div
         className="gradient-bg fixed h-20 lg:py-16 px-4 z-50 flex w-full justify-between items-center lg:px-24 transition-all duration-500"
       >
-        <div ref={logoRef} className="flex items-center lg:gap-6">
+        <div ref={logoRef}>
           <a href="#" onClick={() => navigate("/")} className="text-xl font-medium">
+           <div className="flex items-center lg:gap-6">
+
             <img src="/assets/logo.png" height={60} width={60} alt="" />
+          <span className="lg:text-[22px] font-medium">AOC Hotel and Suite</span>
+           </div>
           </a>
-          <h2 className="lg:text-[22px] font-medium">AOC Hotel and Suite</h2>
         </div>
         {/* Toggle button for mobile view */}
         <nav className="lg:hidden">

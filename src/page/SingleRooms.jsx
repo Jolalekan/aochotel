@@ -58,7 +58,7 @@ const SingleRooms = () => {
   return (
     <Container>
       <div className="flex flex-col gap-10 py-5 ">
-        <div className="md:flex  gap-6">
+        <div className="mt-16 lg:mt-32 md:flex gap-6">
           {/* LEFT */}
           <div className="p-4 lg:w-2/3 flex  items-center flex-col gap-10">
             {/* TOP */}
