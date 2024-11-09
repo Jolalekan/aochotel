@@ -91,9 +91,9 @@ const Footer = () => {
             </div>
             <div className="flex p-2 items-center space-x-4">
               <img src="assets/mail.png" className="w-6 h-6" alt="" />
-              <h2 className="font-medium text-[14px]">info@aoc@gmail.com</h2>
+              <h2 className="font-medium text-[14px]">info@aochotel@gmail.com</h2>
             </div>
-              <h2>12, Michael Street, Off <br /> Ogunlana road Lagos, Nigeria</h2>
+              <h2>12, Michael Street, Off close <br /> Ogunlana road Lagos, Nigeria</h2>
           </div>
         </div>
       </div>

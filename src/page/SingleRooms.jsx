@@ -7,18 +7,23 @@ import "react-datepicker/dist/react-datepicker.css";
 import Rooms from "../components/Rooms";
 
 const SingleRooms = () => {
-  const { roomId } = useParams();
-  const datePickerRef = useRef(null);
-  const [startDate, setStartDate] = useState(new Date());
+  const arrivalDatePickerRef = useRef(null);
+  const departedDatePickerRef = useRef(null);
+  const [arrivalDate, setArrivalDate] = useState(new Date());
+  const [departedDate, setDepartedDate] = useState(new Date());
   const [adultCount, setAdultCount] = useState(1);
   const [rooms, setRooms] = useState(1);
   const [childrenCount, setChildrenCount] = useState(0);
+const maxTotal = 5;
 
-  const maxTotal = 5;
+const handleArrivalImageClick = () => {
+  arrivalDatePickerRef.current.setFocus();
+};
 
-  const handImageClick = () => {
-    datePickerRef.current.setFocus();
-  };
+const handleDepartedImageClick = () => {
+  departedDatePickerRef.current.setFocus();
+};
+
   const [activeImage, setActiveImage] = useState("/assets/hotel1.avif");
 
   const images = [
@@ -101,16 +106,17 @@ const SingleRooms = () => {
             </div>
            
             <div className="flex flex-col gap-4 items-center">
-              <div className="flex flex-col rounded-md ">
+             
+              <div className="flex flex-col rounded-md w-[270px]">
                 <h3 className="font-medium text-center text-[18px] lg:text-[20px] uppercase">
                   Arrival Date
                 </h3>
                 <div className="relative">
                   <div className="flex items-center relative">
                     <DatePicker
-                      selected={startDate}
-                      onChange={(date) => setStartDate(date)}
-                      className="text-[20px] p-1 pl-10 w-full text-black bg-slate-400 rounded-md cursor-pointer focus:outline-none"
+                      selected={arrivalDate}
+                      onChange={(date) => setArrivalDate(date)}
+                      className="text-center text-[20px] p-1 pl-10 w-full text-black bg-slate-400 rounded-md cursor-pointer focus:outline-none"
                     />
                     <img
                       src="/assets/calendar.png"
@@ -118,7 +124,7 @@ const SingleRooms = () => {
                       width={20}
                       height={20}
                       className="absolute left-2 top-1/2 transform -translate-y-1/2"
-                      onClick={handImageClick}
+                      onClick={handleArrivalImageClick}
                     />
                     <img
                       src="/assets/arrow-down.png"
@@ -126,21 +132,21 @@ const SingleRooms = () => {
                       width={20}
                       height={20}
                       className="absolute right-0 mx-3 top-1/2 transform -translate-y-1/2"
-                      onClick={handImageClick}
+                      onClick={handleArrivalImageClick}
                     />
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col  rounded-md ">
+              <div className="flex flex-col rounded-md w-[270px]">
                 <h3 className="font-medium text-center text-[18px] lg:text-[20px] uppercase">
-                  Arrival Date
+                  Departed Date
                 </h3>
                 <div className="relative">
                   <div className="flex items-center relative">
                     <DatePicker
-                      selected={startDate}
-                      onChange={(date) => setStartDate(date)}
-                      className="text-[20px] p-1 pl-10 w-full text-black bg-slate-400 rounded-md cursor-pointer focus:outline-none"
+                      selected={departedDate}
+                      onChange={(date) => setDepartedDate(date)}
+                      className="text-center text-[20px] p-1 pl-10 w-full text-black bg-slate-400 rounded-md cursor-pointer focus:outline-none"
                     />
                     <img
                       src="/assets/calendar.png"
@@ -148,7 +154,7 @@ const SingleRooms = () => {
                       width={20}
                       height={20}
                       className="absolute left-2 top-1/2 transform -translate-y-1/2"
-                      onClick={handImageClick}
+                      onClick={handleDepartedImageClick}
                     />
                     <img
                       src="/assets/arrow-down.png"
@@ -156,7 +162,7 @@ const SingleRooms = () => {
                       width={20}
                       height={20}
                       className="absolute right-0 mx-3 top-1/2 transform -translate-y-1/2"
-                      onClick={handImageClick}
+                      onClick={handleDepartedImageClick}
                     />
                   </div>
                 </div>
@@ -248,7 +254,6 @@ const SingleRooms = () => {
             </div>
           </div>
         </div>
-
 
         <div className="border-t border-gray-400 border-b">
 
