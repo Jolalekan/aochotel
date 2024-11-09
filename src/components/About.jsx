@@ -1,13 +1,29 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import gsap from "gsap";
 import Container from './Container'
 
 const About = () => {
+  const aboutRef = useRef(null);
+  const tlLogo = gsap.timeline();
+
+  useEffect(() => {
+    if (aboutRef.current) {
+      tlLogo.fromTo(
+        aboutRef.current,
+        { y: 50, opacity: 0 },
+        { y: 10, opacity: 1, delay: 0.5, duration: 0.5 }
+      );
+    }
+  }, []);
+
+  
+  
   return (
     <Container>
       <section className='py-10 flex flex-col gap-10'>
         <div className='flex justify-center'>
           <article className='flex items-center justify-center flex-col p-4 lg:w-2/3'>
-            <h1 className='about-heading mb-10'>About Us</h1> 
+            <h1 ref={aboutRef} className='about-heading mb-10'>About Us</h1> 
             <p className='text-center text-lg text-gray-300 mb-4'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum culpa quos incidunt porro? Consequuntur nam architecto dolorem vero officiis, quia suscipit nulla fugiat! Magn
             </p>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Container from "./Container";
 import gsap from "gsap";
 import {useNavigate} from "react-router-dom";
@@ -80,6 +80,21 @@ const Rooms = () => {
     navigate(`/rooms/${roomId}`)
   }
 
+
+  const roomRef = useRef(null);
+  const tlLogo = gsap.timeline();
+
+  useEffect(() => {
+    if (roomRef.current) {
+      tlLogo.fromTo(
+        roomRef.current,
+        { y: 50, opacity: 0 },
+        { y: 10, opacity: 1, delay: 0.5, duration: 0.5 }
+      );
+    }
+  }, []);
+
+
     useEffect(() => {
       const timeline = gsap.timeline();
   
@@ -98,10 +113,10 @@ const Rooms = () => {
       <main className="flex flex-col gap-10 py-10">
         <div className=" flex justify-center">
           <div className=" flex-col flex items-center max-w-3xl justify-center p-4">
-            <h2 className="about-heading   text-center text-3xl font-medium mb-12">Our Rooms</h2>
+            <h2 ref={roomRef} className="about-heading   text-center text-3xl font-medium mb-12">Our Rooms</h2>
             {/* <span>TODO LOGO</span> */}
 
-            <p className=" text-2xl text-gray-300 text-center">
+            <p className=" lg:text-2xl text-gray-300 text-center">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
               nobis quam voluptates reprehenderit repellendus eveniet
               exercitationem, itaque accusamus corporis, assumenda placeat

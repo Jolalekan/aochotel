@@ -107,9 +107,9 @@ const Navbar = () => {
   };
 
   return (
-    <header>
+    <header className="flex">
       <div
-        className=" gradient-bg fixed h-20 lg:py-16  z-50 flex w-full justify-between items-center lg:px-24 transition-all duration-500"
+        className="gradient-bg fixed h-20 lg:py-16  z-50 flex w-full justify-between items-center lg:px-24 transition-all duration-500"
       >
         <div ref={logoRef}>
           <a href="#" onClick={() => navigate("/")} className="text-xl font-medium">
@@ -131,7 +131,7 @@ const Navbar = () => {
             ): (
               
         <button onClick={toggleMenu}>
-    <svg width="40" height="40" viewBox="0 0 23 23">
+    <svg width="36" height="36" viewBox="0 0 23 23">
       <path id="path1" strokeWidth="3" stroke="white" strokeLinecap="round" d="M 5 2.5 L 20 2.5" />
       <path id="path2" strokeWidth="3" stroke="white" strokeLinecap="round" d="M 4 9.423 L 20 9.423" />
       <path id="path3" strokeWidth="3" stroke="white" strokeLinecap="round" d="M 2 16.346 L 20 16.346" />
