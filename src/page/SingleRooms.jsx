@@ -139,7 +139,7 @@ const handleDepartedImageClick = () => {
               </div>
               <div className="flex flex-col rounded-md w-[270px]">
                 <h3 className="font-medium text-center text-[18px] lg:text-[20px] uppercase">
-                  Departed Date
+                  Departure Date
                 </h3>
                 <div className="relative">
                   <div className="flex items-center relative">
