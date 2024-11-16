@@ -50,11 +50,7 @@ const Navbar = () => {
         { y: 115, opacity: 0 },
         { y: 0, opacity: 1, delay: 0.5, duration: 1 }
       );
-
-      return () => {
-        // cleanup code here (runs when it STOPS matching)
-      };
-    });
+    }, []);
 
     mm.current.add("(min-width: 1001px)", () => {
       if (navRef.current) {
