@@ -1,0 +1,17 @@
+export const MenuItems = [
+    {
+        name: "HOME", path:"/",
+    },
+    {
+        name: "ROOMS & CONTACT", path:"/",
+    },
+    {
+        name: "CAR HIRE", path:"/",
+    },
+    {
+        name: "HALL", path:"/",
+    },
+    {
+        name: "CONTACT", path:"/",
+    },
+]

@@ -1,0 +1,106 @@
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  scroll-behavior: smooth;
+  background: var(--color-bg);
+  color: white;
+}
+
+.gradient-bg
+{ 
+  background: linear-gradient(90deg, #0000ff 0%, #6868ff 0%, #ee82ee 100%);
+}
+
+.gradient__bg {
+  background:-moz-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+
+  /* safari 5.1+,chrome 10+ */
+  background:-webkit-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+
+  /* opera 11.10+ */
+  background:-o-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+
+  /* ie 10+ */
+  background:-ms-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+
+  /* global 92%+ browsers support */
+  background:radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+}
+
+
+.gradient__text {
+  background: linear-gradient(90deg, #0000FF 0%, #6868FF 0%, #EE82EE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+
+nav ul li{
+  position: relative;
+}
+
+nav ul li:after{
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+nav ul li:hover:after{
+  opacity: 1;
+}
+
+nav ul li:after {
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+nav ul li:hover:after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.nav-bg{
+  background-color: #042c54
+}
+
+.color-footer{
+  background-color: #031b34;}
+
+.about-heading {
+  position: relative;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.about-heading:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+  width: 60%;
+  height: 4px;
+  background-color: #ccc;
+}
+
+
